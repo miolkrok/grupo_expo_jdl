@@ -26,7 +26,7 @@ class ArtistaServiceImplTest {
 		
 		ar.setId(1);
 		ar.setApellido("Tapia");
-		ar.setNombre("Deniis");
+		ar.setNombre("Denis");
 		ar.setPrecio(new BigDecimal(1000));
 //		this.artistaService.modificarArtista(ar);
 		assertThat(ar).isNotNull();
