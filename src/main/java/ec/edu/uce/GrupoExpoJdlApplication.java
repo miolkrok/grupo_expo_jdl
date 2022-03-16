@@ -95,14 +95,14 @@ public class GrupoExpoJdlApplication implements CommandLineRunner{
 		
 		//////////////////////////////////////////////////
 		
-		Artista ar = new Artista();
-		ar.setNombre("De");
-		ar.setApellido("Ortiz");
-		
-		this.artistaService.guardarArtista(ar);
-		ar.setId(1);
-		ar.setPrecio(new BigDecimal(1000));
-		this.artistaService.modificarArtista(ar);
+//		Artista ar = new Artista();
+//		ar.setNombre("De");
+//		ar.setApellido("Ortiz");
+//		
+//		this.artistaService.guardarArtista(ar);
+//		ar.setId(1);
+//		ar.setPrecio(new BigDecimal(1000));
+//		this.artistaService.modificarArtista(ar);
 		
 		
 		
