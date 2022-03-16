@@ -1,10 +1,14 @@
 package ec.edu.uce;
 
+import java.math.BigDecimal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import ec.edu.uce.modelo.Artista;
+import ec.edu.uce.service.IArtistaService;
 import ec.edu.uce.service.deberes.ICajeroBancarioService;
 import ec.edu.uce.service.deberes.ICuentaBancariaDService;
 import ec.edu.uce.service.deberes.ICuentaHabienteService;
@@ -21,6 +25,9 @@ public class GrupoExpoJdlApplication implements CommandLineRunner{
 	private IHistoricoRetirosService histoRetirosService;
 	@Autowired
 	private ICajeroBancarioService cajeroBancService;
+	@Autowired
+	private IArtistaService artistaService;
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(GrupoExpoJdlApplication.class, args);
@@ -84,6 +91,21 @@ public class GrupoExpoJdlApplication implements CommandLineRunner{
 ////3
 
 //LOG.info(" "+ this.cajeroBancService.consultarSaldoCuentaBancaria("172016106130"));
+		
+		
+		//////////////////////////////////////////////////
+		
+		Artista ar = new Artista();
+		ar.setNombre("De");
+		ar.setApellido("Ortiz");
+		
+		this.artistaService.guardarArtista(ar);
+		ar.setId(1);
+		ar.setPrecio(new BigDecimal(1000));
+		this.artistaService.modificarArtista(ar);
+		
+		
+		
 	}
 
 }
